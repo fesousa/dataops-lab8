@@ -5,9 +5,7 @@ import json
 client = boto3.client("redshift-data")
 
 def handler(event, context):
-    print(event)
-
-    # input parameters passed from the caller event
+       # input parameters passed from the caller event
     # cluster identifier for the Amazon Redshift cluster
     redshift_cluster_id = 'impacta-dataops-cluster'
     # database name for the Amazon Redshift cluster
@@ -24,12 +22,13 @@ def handler(event, context):
     except Exception as e:
         raise
 
-    return {'statusCode': 200, 'body': json.dumps(res)}
+    return {'statusCode': 200}
 
 def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_cluster_id, with_event=True):
     print("Executing: {}".format(sql_text))
     res = client.execute_statement(Database=redshift_database, DbUser=redshift_user, Sql=sql_text,
                                    ClusterIdentifier=redshift_cluster_id, WithEvent=with_event)
+    res = client.get_statement_result(Id=res['Id'])
     print(res)
     
     return res
