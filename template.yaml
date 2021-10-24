@@ -2,7 +2,11 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A starter AWS Lambda function.
 Resources:
-  # Criar função lambda agendada
+  ApiGatewayEntrega:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: entrega
+  # Criar função lambda
   lambdafunction:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -14,3 +18,11 @@ Resources:
       MemorySize: 256 # memória utilizada pela funçãop
       Timeout: 30 # tempo máximo de execução, em segundos
       Role: !Sub arn:aws:iam::${AWS::AccountId}:role/LabRole # IAM role da função para permissões a outros recursos da AWS
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
+            RestApiId:
+              Ref: ApiGatewayEntrega
