@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A starter AWS Lambda function.
+Resources:
+  # Criar função lambda agendada
+  lambdafunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: test-chats #nome da função
+      Handler: charts.handler # nome do arquivo e método de onde está a função
+      Runtime: python3.9 # ambiente de execução
+      CodeUri: ./app # local onde estarão os arquivos da função
+      Description: Gráficos.
+      MemorySize: 256 # memória utilizada pela funçãop
+      Timeout: 30 # tempo máximo de execução, em segundos
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/LabRole # IAM role da função para permissões a outros recursos da AWS
