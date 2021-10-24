@@ -23,7 +23,7 @@ def handler(event, context):
     except Exception as e:
         raise
 
-    return {'statusCode': 200, json.dumps(res)}
+    return {'statusCode': 200, "body":json.dumps(res)}
 
 def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_cluster_id, with_event=True):
     print("Executing: {}".format(sql_text))
