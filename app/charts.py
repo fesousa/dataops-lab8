@@ -1,5 +1,6 @@
 import boto3
 import json
+import time
 
 # iniciar cliente redshift
 client = boto3.client("redshift-data")
@@ -28,11 +29,14 @@ def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_clu
     print("Executing: {}".format(sql_text))
     res = client.execute_statement(Database=redshift_database, DbUser=redshift_user, Sql=sql_text,
                                    ClusterIdentifier=redshift_cluster_id, WithEvent=with_event)
-    
+    q_id = res['Id']
+    # esperar resultado
     for i in range(1, 10):
-        res = client.describe_statement(Id=res['Id'])
-        print(res['Status'])
-    #res = client.get_statement_result(Id=res['Id'])
+        res = client.describe_statement(Id=q_id)
+        if res['Status'] == 'FINISHED':
+            break
+        time.sleep(0.1)
+    res = client.get_statement_result(Id=q_id)
     print(res)
     
     return res
