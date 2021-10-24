@@ -27,14 +27,14 @@
                 },
                 
                 xAxis: {
-                  data: response['uf']
+                  data: response['uf']['dim']
                 },
                 yAxis: {},
                 series: [
                   {
                     name: 'vacinas',
                     type: 'bar',
-                    data: response['quantidade'],
+                    data: response['uf']['value'],
                     label: {
                       show: true,
                       position: 'top'

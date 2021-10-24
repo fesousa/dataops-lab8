@@ -16,15 +16,20 @@ def handler(event, context):
 
     try:
         
-        sql = "select sum(quantidade), uf from vacinas_dw group by uf"
+        sql_uf = "select sum(quantidade), uf from vacinas_dw group by uf"
         # execute the input SQL statement in the specified Amazon Redshift cluster
-        res = execute_sql(client, sql, redshift_database, redshift_user, redshift_cluster_id)
-        res = extract_data(res)
-        print (res)
+        res_uf = execute_sql(client, sql_uf, redshift_database, redshift_user, redshift_cluster_id)
+        res_uf = extract_data(res_uf)
+
+        sql_vacina = "select sum(quantidade), vacina from vacinas_dw group by vacina"
+        # execute the input SQL statement in the specified Amazon Redshift cluster
+        res_vacina = execute_sql(client, sql_vacina, redshift_database, redshift_user, redshift_cluster_id)
+        res_vacina = extract_data(res_vacina)
+
     except Exception as e:
         raise
 
-    return {'statusCode': 200, "body":json.dumps(res), "headers": {
+    return {'statusCode': 200, "body":json.dumps({"uf":res_uf, "vacina":res_vacina}), "headers": {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "OPTIONS,GET"}}
 
@@ -44,9 +49,9 @@ def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_clu
     return res['Records']
 
 def extract_data(res):
-    uf = []
-    quantidade = []
+    dim = []
+    value = []
     for r in res:
-        uf.append(r[1]['stringValue'])
-        quantidade.append(r[0]['longValue'] )
-    return {'uf': uf, 'quantidade': quantidade}
+        dim.append(r[1]['stringValue'])
+        value.append(r[0]['longValue'] )
+    return {'dim': dim, 'value': value}
