@@ -44,9 +44,9 @@ def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_clu
     return res['Records']
 
 def extract_data(res):
-    result_list = []
+    uf = []
+    quantidade = []
     for r in res:
-        result_list.append({
-            r[1]['stringValue']: r[0]['longValue'] 
-        })
-    return result_list
+        uf.append(r[1]['stringValue'])
+        quantidade.append(r[0]['longValue'] )
+    return {'uf': uf, 'quantidade': quantidade}

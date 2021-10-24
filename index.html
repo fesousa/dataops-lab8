@@ -18,37 +18,37 @@
           url: 'https://4wy1fqb1mg.execute-api.us-east-1.amazonaws.com/prod', // provide correct url
           type: 'GET',
           dataType: 'JSON',
-          success: function(chart_values) {
+          success: function(response) {
               console.log(chart_values); // take a peek on the values (browser console)
 
-              //# put that code here and use chart_values!
+              var option = {
+                title: {
+                  text: 'Vacinas por UF'
+                },
+                tooltip: {},
+                legend: {
+                  data: ['Vacinas']
+                },
+                xAxis: {
+                  data: response['uf']
+                },
+                yAxis: {},
+                series: [
+                  {
+                    name: 'vacinas',
+                    type: 'bar',
+                    data: response['quantidade']
+                  }
+                ]
+              };
+
+              // Display the chart using the configuration items and data just specified.
+              myChart.setOption(option);
           }
       });
 
       // Specify the configuration items and data for the chart
-      var option = {
-        title: {
-          text: 'ECharts Getting Started Example'
-        },
-        tooltip: {},
-        legend: {
-          data: ['sales']
-        },
-        xAxis: {
-          data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
-        },
-        yAxis: {},
-        series: [
-          {
-            name: 'sales',
-            type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-          }
-        ]
-      };
-
-      // Display the chart using the configuration items and data just specified.
-      myChart.setOption(option);
+      
     </script>
   </body>
 </html>
