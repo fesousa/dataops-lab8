@@ -19,16 +19,13 @@
           type: 'GET',
           dataType: 'JSON',
           success: function(response) {
-              console.log(chart_values); // take a peek on the values (browser console)
+              console.log(response); // take a peek on the values (browser console)
 
               var option = {
                 title: {
                   text: 'Vacinas por UF'
                 },
-                tooltip: {},
-                legend: {
-                  data: ['Vacinas']
-                },
+                
                 xAxis: {
                   data: response['uf']
                 },
@@ -37,7 +34,11 @@
                   {
                     name: 'vacinas',
                     type: 'bar',
-                    data: response['quantidade']
+                    data: response['quantidade'],
+                    label: {
+                      show: true,
+                      position: 'top'
+                    },
                   }
                 ]
               };
