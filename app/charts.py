@@ -28,7 +28,11 @@ def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_clu
     print("Executing: {}".format(sql_text))
     res = client.execute_statement(Database=redshift_database, DbUser=redshift_user, Sql=sql_text,
                                    ClusterIdentifier=redshift_cluster_id, WithEvent=with_event)
-    res = client.get_statement_result(Id=res['Id'])
+    
+    for i in range(1, 10):
+        res = client.describe_statement(Id=res['Id'])
+        print(res['Status'])
+    #res = client.get_statement_result(Id=res['Id'])
     print(res)
     
     return res
