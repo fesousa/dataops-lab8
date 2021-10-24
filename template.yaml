@@ -8,7 +8,7 @@ Resources:
     Properties:
       FunctionName: test-chats #nome da função
       Handler: charts.handler # nome do arquivo e método de onde está a função
-      Runtime: python3.9 # ambiente de execução
+      Runtime: python3.7 # ambiente de execução
       CodeUri: ./app # local onde estarão os arquivos da função
       Description: Gráficos.
       MemorySize: 256 # memória utilizada pela funçãop
