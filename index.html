@@ -11,10 +11,12 @@
     <!-- Prepare a DOM with a defined width and height for ECharts -->
     <div id="uf" style="width: 600px;height:400px;"></div>
     <div id="vacinas" style="width: 600px;height:400px;"></div>
+    <div id="datas" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
       // Initialize the echarts instance based on the prepared dom
       var chartUf = echarts.init(document.getElementById('uf'));
       var chartVacinas = echarts.init(document.getElementById('vacinas'));
+      var chartDatas = echarts.init(document.getElementById('datas'));
 
       var dati = $.ajax({
           url: 'https://4wy1fqb1mg.execute-api.us-east-1.amazonaws.com/prod', // provide correct url
@@ -78,9 +80,50 @@
                     },
                   }
                 ]
-              };
+              };              
+              chartVacinas.setOption(optionVacina);
 
-              
+              data_datas = []
+              for (var i = 0; i < response['data']['dim'].length; i++) {
+                data_datas.push([
+                  echarts.format.formatTime('yyyy-MM-dd', response['data']['dim'][i]),
+                  response['data']['value'][i]
+                ]);
+
+              }
+
+              var optionData = {
+                tooltip: {
+                  position: 'top',
+                  formatter: function (p) {
+                    var format = echarts.format.formatTime('yyyy-MM-dd', p.data[0]);
+                    return format + ': ' + p.data[1];
+                  }
+                },
+                visualMap: {
+                  min: 0,
+                  max: 1000,
+                  calculable: true,
+                  orient: 'vertical',
+                  left: '670',
+                  top: 'center'
+                },
+                calendar: [
+                  {
+                    orient: 'vertical',
+                    range: '2021'
+                  }
+                ],
+                series: [
+                  {
+                    type: 'heatmap',
+                    coordinateSystem: 'calendar',
+                    calendarIndex: 0,
+                    data: data_datas
+                  }
+                  
+                ]
+              };              
               chartVacinas.setOption(optionVacina);
           }
       });

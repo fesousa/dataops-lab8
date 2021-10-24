@@ -29,7 +29,7 @@ def handler(event, context):
         sql_data = "select sum(quantidade), data_aplicacao from vacinas_dw group by data_aplicacao"
         # execute the input SQL statement in the specified Amazon Redshift cluster
         res_data = execute_sql(client, sql_data, redshift_database, redshift_user, redshift_cluster_id)
-        res_data = extract_data(res_vacina)
+        res_data = extract_data(res_data)
 
     except Exception as e:
         raise
