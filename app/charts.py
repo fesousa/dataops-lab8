@@ -56,6 +56,7 @@ def execute_sql(client, sql_text, redshift_database, redshift_user, redshift_clu
 def extract_data(res):
     dim = []
     value = []
+    print(res)
     for r in res:
         dim.append(r[1]['stringValue'])
         value.append(r[0]['longValue'] )
