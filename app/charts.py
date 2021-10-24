@@ -26,10 +26,15 @@ def handler(event, context):
         res_vacina = execute_sql(client, sql_vacina, redshift_database, redshift_user, redshift_cluster_id)
         res_vacina = extract_data(res_vacina)
 
+        sql_data = "select sum(quantidade), data_aplicacao from vacinas_dw group by data_aplicacao"
+        # execute the input SQL statement in the specified Amazon Redshift cluster
+        res_data = execute_sql(client, sql_data, redshift_database, redshift_user, redshift_cluster_id)
+        res_data = extract_data(res_vacina)
+
     except Exception as e:
         raise
 
-    return {'statusCode': 200, "body":json.dumps({"uf":res_uf, "vacina":res_vacina}), "headers": {
+    return {'statusCode': 200, "body":json.dumps({"uf":res_uf, "vacina":res_vacina, "data":res_data}), "headers": {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "OPTIONS,GET"}}
 
