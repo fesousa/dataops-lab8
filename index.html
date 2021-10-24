@@ -11,7 +11,7 @@
     <!-- Prepare a DOM with a defined width and height for ECharts -->
     <div id="uf" style="width: 600px;height:400px;"></div>
     <div id="vacinas" style="width: 600px;height:400px;"></div>
-    <div id="datas" style="width: 600px;height:400px;"></div>
+    <div id="datas" style="width: 600px;height:900px;"></div>
     <script type="text/javascript">
       // Initialize the echarts instance based on the prepared dom
       var chartUf = echarts.init(document.getElementById('uf'));
@@ -74,7 +74,6 @@
                       show: true,
                       position: 'insideTopLeft',
                       formatter: function (params) {
-                        console.log(params)
                         return (params.name) + `- `+ (params.value);
                       }
                     },
@@ -85,13 +84,16 @@
 
               data_datas = []
               for (var i = 0; i < response['data']['dim'].length; i++) {
+                
                 data_datas.push([
-                  echarts.format.formatTime('yyyy-MM-dd', response['data']['dim'][i]),
+                  response['data']['dim'][i],
                   response['data']['value'][i]
                 ]);
 
               }
 
+              var max = (Math.max.apply(Math,response['data']['value']))
+              //console.log(data_datas)
               var optionData = {
                 tooltip: {
                   position: 'top',
@@ -102,16 +104,20 @@
                 },
                 visualMap: {
                   min: 0,
-                  max: 1000,
+                  max: max,
                   calculable: true,
                   orient: 'vertical',
-                  left: '670',
-                  top: 'center'
+                  left: '300',
+                  top: 'center',
+                  inRange: {
+                    color: ['#F8F8FF', '#002366']
+                  },
                 },
                 calendar: [
                   {
                     orient: 'vertical',
-                    range: '2021'
+                    range: '2021',
+                    cellSize: [30, 'auto'],
                   }
                 ],
                 series: [
@@ -124,7 +130,7 @@
                   
                 ]
               };              
-              chartVacinas.setOption(optionVacina);
+              chartDatas.setOption(optionData);
           }
       });
 
