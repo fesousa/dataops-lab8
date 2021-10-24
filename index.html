@@ -9,10 +9,12 @@
   </head>
   <body>
     <!-- Prepare a DOM with a defined width and height for ECharts -->
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="uf" style="width: 600px;height:400px;"></div>
+    <div id="vacinas" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
       // Initialize the echarts instance based on the prepared dom
-      var myChart = echarts.init(document.getElementById('main'));
+      var chartUf = echarts.init(document.getElementById('uf'));
+      var chartVacinas = echarts.init(document.getElementById('vacinas'));
 
       var dati = $.ajax({
           url: 'https://4wy1fqb1mg.execute-api.us-east-1.amazonaws.com/prod', // provide correct url
@@ -21,7 +23,8 @@
           success: function(response) {
               console.log(response); // take a peek on the values (browser console)
 
-              var option = {
+              // uf
+              var optionUf = {
                 title: {
                   text: 'Vacinas por UF'
                 },
@@ -43,8 +46,42 @@
                 ]
               };
 
-              // Display the chart using the configuration items and data just specified.
-              myChart.setOption(option);
+              
+              chartUf.setOption(optionUf);
+
+              data_vacinas = []
+              for (var i = 0; i < response['vacina']['dim'].length; i++) {
+                data_vacinas.push({
+                  name: response['vacina']['dim'][i],
+                  value: response['vacina']['value'][i],
+                })
+                  //Do something
+              }
+
+              // tipo de vacina
+              var optionVacina = {
+                title: {
+                  text: 'Vacinas por tipo'
+                },
+                
+                series: [
+                  {
+                    type: 'treemap',
+                    data: data_vacinas,
+                    label: {
+                      show: true,
+                      position: 'insideTopLeft',
+                      formatter: function (params) {
+                        console.log(params)
+                        return (params.name) + `- `+ (params.value);
+                      }
+                    },
+                  }
+                ]
+              };
+
+              
+              chartVacinas.setOption(optionVacina);
           }
       });
 
