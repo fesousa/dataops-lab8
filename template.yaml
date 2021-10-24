@@ -11,8 +11,6 @@ Resources:
         AllowMethods: "'POST, GET'"
         AllowHeaders: "'X-Forwarded-For'"
         AllowOrigin: "'*'"
-        MaxAge: "'600'"
-        AllowCredentials: true
   # Criar função lambda
   lambdafunction:
     Type: 'AWS::Serverless::Function'
