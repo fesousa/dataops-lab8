@@ -2,6 +2,11 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A starter AWS Lambda function.
 Resources:
+  ApiGatewayEntrega:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      OpenApiVersion: '2.0'
   # Criar função lambda
   lambdafunction:
     Type: 'AWS::Serverless::Function'
@@ -20,3 +25,5 @@ Resources:
           Properties:
             Path: /
             Method: get
+            RestApiId:
+              Ref: ApiGatewayEntrega
