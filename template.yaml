@@ -54,7 +54,7 @@ Resources:
 Outputs:
   WebsiteURL:
     Value: !GetAtt
-      - S3Entrega 
+      - S3BucketEntrega 
       - WebsiteURL
     Description: URL do site no S3
   S3BucketSecureURL:
@@ -62,6 +62,6 @@ Outputs:
       - ''
       - - 'https://'
         - !GetAtt
-          - S3Entrega
+          - S3BucketEntrega
           - DomainName
     Description: Nome no bucket S3
