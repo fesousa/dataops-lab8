@@ -1,14 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: A starter AWS Lambda function.
+Description: Aplicação servelerless para entrega do data pipeline.
 Resources:
+  # Bucket para aplicação estática com JS
   S3BucketEntrega:
     Type: 'AWS::S3::Bucket'
     Properties:
-      AccessControl: PublicRead
-      BucketName: dataops-entrega-fernandosousa
+      AccessControl: PublicRead # Habilitar leitura pública do bucket
+      BucketName: dataops-entrega-fernandosousa # nome do bucket
       WebsiteConfiguration:
-        IndexDocument: index.html
+        IndexDocument: index.html # arquivo index da aplicação
+  # Política de acesso ao Bucket, para poder acessar de qualquer lugar
   BucketEntregaPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
@@ -26,20 +28,21 @@ Resources:
                 - /*
             Principal: '*'
             Sid: 'PublicReadGetObject'
+  # API gateway - criação de endpoints de API para acesso aos dados
   ApiGatewayEntrega:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
       OpenApiVersion: '2.0'
-  # Criar função lambda
+  # Função lambda para executar o código da API
   LambdaEntrega:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: test-chats #nome da função
+      FunctionName: dataops-entrega #nome da função
       Handler: charts.handler # nome do arquivo e método de onde está a função
       Runtime: python3.7 # ambiente de execução
       CodeUri: ./app # local onde estarão os arquivos da função
-      Description: Gráficos.
+      Description: Dados para criação de gráficos.
       MemorySize: 256 # memória utilizada pela funçãop
       Timeout: 30 # tempo máximo de execução, em segundos
       Role: !Sub arn:aws:iam::${AWS::AccountId}:role/LabRole # IAM role da função para permissões a outros recursos da AWS
@@ -51,17 +54,13 @@ Resources:
             Method: get
             RestApiId:
               Ref: ApiGatewayEntrega
+# Saída do CloudFormation - URL do bucket
 Outputs:
   WebsiteURL:
     Value: !GetAtt
       - S3BucketEntrega 
       - WebsiteURL
     Description: URL do site no S3
-  S3BucketSecureURL:
-    Value: !Join
-      - ''
-      - - 'https://'
-        - !GetAtt
-          - S3BucketEntrega
-          - DomainName
-    Description: Nome no bucket S3
+  APIGatewayURL:
+    Description: URL das APIs
+    Value: !Sub "https://${ApiGatewayEntrega}.execute-api.${AWS::Region}.amazonaws.com/prod/"
