@@ -2,13 +2,20 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A starter AWS Lambda function.
 Resources:
+  S3Entrega:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      AccessControl: PublicRead
+      BucketName: dataops-entrega-fernandosousa
+      WebsiteConfiguration:
+        IndexDocument: index.html
   ApiGatewayEntrega:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
       OpenApiVersion: '2.0'
   # Criar função lambda
-  lambdafunction:
+  LambdaEntrega:
     Type: 'AWS::Serverless::Function'
     Properties:
       FunctionName: test-chats #nome da função
@@ -27,3 +34,17 @@ Resources:
             Method: get
             RestApiId:
               Ref: ApiGatewayEntrega
+Outputs:
+  WebsiteURL:
+    Value: !GetAtt
+      - S3Entrega 
+      - WebsiteURL
+    Description: URL do site no S3
+  S3BucketSecureURL:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - S3Entrega
+          - DomainName
+    Description: Nome no bucket S3
