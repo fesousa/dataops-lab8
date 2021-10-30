@@ -3,34 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <title>Vacinação COVID</title>
-    <!-- Include the ECharts file you just downloaded -->
+    <!-- Inclusão do jQuery e ECharts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
   </head>
   <body>
-    <!-- Prepare a DOM with a defined width and height for ECharts -->
+    <!-- divs onde serão colocadas os raficos -->
     <div id="uf" style="width: 600px;height:400px;"></div>
     <div id="vacinas" style="width: 600px;height:400px;"></div>
     <div id="datas" style="width: 600px;height:900px;"></div>
     <script type="text/javascript">
-      // Initialize the echarts instance based on the prepared dom
+
       var chartUf = echarts.init(document.getElementById('uf'));
       var chartVacinas = echarts.init(document.getElementById('vacinas'));
       var chartDatas = echarts.init(document.getElementById('datas'));
 
+      // Executar chamada para a API
       var dati = $.ajax({
-          url: 'https://4wy1fqb1mg.execute-api.us-east-1.amazonaws.com/prod', // provide correct url
+          // trocar pela URL do API ateway
+          url: 'https://xxxxxxx.execute-api.us-east-1.amazonaws.com/prod',
           type: 'GET',
           dataType: 'JSON',
           success: function(response) {
-              console.log(response); // take a peek on the values (browser console)
-
-              // uf
+              // grafico de UF
               var optionUf = {
                 title: {
                   text: 'Vacinas por UF'
-                },
-                
+                },                
                 xAxis: {
                   data: response['uf']['dim']
                 },
@@ -46,26 +45,22 @@
                     },
                   }
                 ]
-              };
-
-              
+              };              
               chartUf.setOption(optionUf);
-
+              
+              // gráfico de tipo de vacinas
               data_vacinas = []
               for (var i = 0; i < response['vacina']['dim'].length; i++) {
                 data_vacinas.push({
                   name: response['vacina']['dim'][i],
                   value: response['vacina']['value'][i],
                 })
-                  //Do something
               }
 
-              // tipo de vacina
               var optionVacina = {
                 title: {
                   text: 'Vacinas por tipo'
-                },
-                
+                },                
                 series: [
                   {
                     type: 'treemap',
@@ -82,9 +77,9 @@
               };              
               chartVacinas.setOption(optionVacina);
 
+              // gráfico de datas
               data_datas = []
-              for (var i = 0; i < response['data']['dim'].length; i++) {
-                
+              for (var i = 0; i < response['data']['dim'].length; i++) {                
                 data_datas.push([
                   response['data']['dim'][i],
                   response['data']['value'][i]
@@ -93,7 +88,6 @@
               }
 
               var max = (Math.max.apply(Math,response['data']['value']))
-              //console.log(data_datas)
               var optionData = {
                 tooltip: {
                   position: 'top',
@@ -132,10 +126,7 @@
               };              
               chartDatas.setOption(optionData);
           }
-      });
-
-      // Specify the configuration items and data for the chart
-      
+      });      
     </script>
   </body>
 </html>

@@ -6,28 +6,26 @@ import time
 client = boto3.client("redshift-data")
 
 def handler(event, context):
-       # input parameters passed from the caller event
-    # cluster identifier for the Amazon Redshift cluster
+    # Nome do cluster redshift
     redshift_cluster_id = 'impacta-dataops-cluster'
-    # database name for the Amazon Redshift cluster
+    # nome do database redshift
     redshift_database = 'dev'
-    # database user in the Amazon Redshift cluster with access to execute relevant SQL queries
+    # nome do usuário do database redshift
     redshift_user = 'awsuser'
 
     try:
-        
+        # executar consulta no redshift para retornar quantidade de vacinas por UF
         sql_uf = "select sum(quantidade), uf from vacinas_dw group by uf"
-        # execute the input SQL statement in the specified Amazon Redshift cluster
         res_uf = execute_sql(client, sql_uf, redshift_database, redshift_user, redshift_cluster_id)
         res_uf = extract_data(res_uf)
 
+        # executar consulta no redshift para retornar quantidade de vacinas por nome
         sql_vacina = "select sum(quantidade), vacina from vacinas_dw group by vacina"
-        # execute the input SQL statement in the specified Amazon Redshift cluster
         res_vacina = execute_sql(client, sql_vacina, redshift_database, redshift_user, redshift_cluster_id)
         res_vacina = extract_data(res_vacina)
 
+        # executar consulta no redshift para retornar quantidade de vacinas por data de aplicacão
         sql_data = "select sum(quantidade), data_aplicacao from vacinas_dw group by data_aplicacao"
-        # execute the input SQL statement in the specified Amazon Redshift cluster
         res_data = execute_sql(client, sql_data, redshift_database, redshift_user, redshift_cluster_id)
         res_data = extract_data(res_data)
 
