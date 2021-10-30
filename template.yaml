@@ -2,13 +2,30 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A starter AWS Lambda function.
 Resources:
-  S3Entrega:
+  S3BucketEntrega:
     Type: 'AWS::S3::Bucket'
     Properties:
       AccessControl: PublicRead
       BucketName: dataops-entrega-fernandosousa
       WebsiteConfiguration:
         IndexDocument: index.html
+  BucketEntregaPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3BucketEntrega
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - 's3:GetObject'
+            Effect: Allow
+            Resource: !Join
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref S3BucketEntrega  
+                - /*
+            Principal: '*'
+            Sid: 'PublicReadGetObject'
   ApiGatewayEntrega:
     Type: AWS::Serverless::Api
     Properties:
