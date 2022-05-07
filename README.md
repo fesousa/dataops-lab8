@@ -85,21 +85,19 @@ https://github.com/fesousa/dataops-lab8/blob/d7e968e788fc60a8a5d2ce83a4373768c41
 
     16.1. Quantidade de registros:
 
-vacinas.count()
+    https://github.com/fesousa/dataops-lab8/blob/96564222873c57c4df21c0e8f7c0059cf333255c/code/count.py#L1
 
     16.2.Mostrar dados
 
-vacinas.show()
+    https://github.com/fesousa/dataops-lab8/blob/96564222873c57c4df21c0e8f7c0059cf333255c/code/show.py#L1
 
     16.3. Mostrar schema dos dados
 
-vacinas.printSchema()
+    https://github.com/fesousa/dataops-lab8/blob/b9db0471699e4ec39ff0e6958942fd28ef5a3c0d/code/schema.py#L1
 
     16.4. Contar quantidade de vacinas por nome
 
-count_nome_vacina = vacinas.groupBy("vacina_nome").count()
-
-count_nome_vacina.show()
+    https://github.com/fesousa/dataops-lab8/blob/b9db0471699e4ec39ff0e6958942fd28ef5a3c0d/code/count_nome.py#L1-L2
 
 
     16.5. Mostrar um gráfico de distribuição pode nome da vacina
