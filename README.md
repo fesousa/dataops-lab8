@@ -72,6 +72,10 @@ https://github.com/fesousa/dataops-lab8/blob/3de56ffa93ad23a4fafb0e0b2af8072f3f5
 
 13.	Na segunda célula (a que ainda está vazia, sem nenhum código), crie duas variáveis para armazenar os caminhos dos buckets de entrada e saída do ETL. Lembre-se de trocar `<nome-bucket>` pelo que bucket onde estão seus dados. Depois execute a nova célula. As duas variáveis criadas (input_path e output_path) agora podem ser utilizadas em qualquer outra célula do notebook. Uma nova célula será aberta.
 
+https://github.com/fesousa/dataops-lab8/blob/ffa0b7f3e180bc313a2a71c10fd8824027735a7a/code/buckets.py#L1-L2
+
+14.	Na terceira célula faça a leitura dos dados do bucket de entrada (`input_path`) para uma variável `vacinas`. Essa nova variável poderá ser utilizada nas próximas células para continuar o ETL. Execute a célula para a leitura dos dados.
+
 
 ## Finalização do Laboratório
 
