@@ -47,9 +47,9 @@ Quando criamos o cluster do EMR no [Laboratório 7](https://github.com/fesousa/d
 
 9. Identifique a célula onde são escritos os códigos python e pyspark. Ele parece com o da imagem abaixo. 
 
-<img src="images/Imagem10.png" height='140'/>
+<img src="images/Imagem11.png" height='140'/>
 
-10. Copie as importações do arquivo spark-etl-vacinas.py, do VSCode (código está logo abaixo) e cole na área cinza da célula do notebook. Depois, aperte o botão <img src="images/Imagem11.png" height='25'/> para executar.
+10. Copie as importações do arquivo spark-etl-vacinas.py, do VSCode (código está logo abaixo) e cole na área cinza da célula do notebook. Depois, aperte o botão <img src="images/Imagem10.png" height='25'/> para executar.
 
 https://github.com/fesousa/dataops-lab8/blob/96d55034e8639f95508051927acdaadd4543a760/code/imports.py#L1-L5
 
@@ -67,6 +67,8 @@ Execução finalizada
 12.	Repare que uma nova célula foi criada automaticamente. Nela será escrito o próximo código que se deseja executar. O interessante do Jupyter notebook é que o que foi escrito e executado em uma célula (importações, variáveis, funções, classes, etc) pode ser utilizado em qualquer outra célula, evitando assim a reexecução de todo o código quando apenas uma pequena parte foi modificada.
 
 Além disso, como criamos um notebook do tipo pyspark, uma variável chamada `spark` foi criada, e poderá ser utilizada em qualquer outra célula. Ela contém a sessão do spark, e substitui a seguinte linha de código utilizada diretamente no spark do EMR:
+
+https://github.com/fesousa/dataops-lab8/blob/3de56ffa93ad23a4fafb0e0b2af8072f3f5d5992/code/sessao_spark.py#L1-L5
 
 
 ## Finalização do Laboratório
