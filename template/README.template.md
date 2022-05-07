@@ -57,11 +57,11 @@ https://github.com/fesousa/dataops-lab8/blob/96d55034e8639f95508051927acdaadd454
 
 Célula em execução
 
-<img src="images/Imagem12.png" height='140'/>
+<img src="images/Imagem12.png" height='120'/>
 
 Execução terminada
 
-<img src="images/Imagem13.png" height='140'/>
+<img src="images/Imagem13.png" height='170'/>
 
 
 
