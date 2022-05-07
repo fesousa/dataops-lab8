@@ -216,20 +216,13 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 
 <table>
-
-    <tr>
-
-        <td><img src="images/Imagem22.png" height='200'/></td>
-
-        <td><img src="images/Imagem23.png" height='200'/></td>
-    </tr>
-
-    <tr>
-
-        <td rowspan='2'><img src="images/Imagem24.png" height='600'/></td>
-
-    </tr>
-
+<tr>
+<td><img src="images/Imagem22.png" height='200'/></td>
+<td><img src="images/Imagem23.png" height='200'/></td>
+</tr>
+<tr>
+<td rowspan='2'><img src="images/Imagem24.png" height='600'/></td>
+</tr>
 </table>
 
 
@@ -247,5 +240,5 @@ Termine o cluster do EMR para economizar recursos da sua conta.
     &copy; 2022 Fernando Sousa
     <br/>
     
-Last update: 2022-05-07 19:51:52
+Last update: 2022-05-07 19:52:25
 </div>
