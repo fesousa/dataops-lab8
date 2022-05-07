@@ -78,6 +78,33 @@ https://github.com/fesousa/dataops-lab8/blob/ffa0b7f3e180bc313a2a71c10fd88240277
 
 https://github.com/fesousa/dataops-lab8/blob/d7e968e788fc60a8a5d2ce83a4373768c4184c5c/code/read_data.py#L1-L2
 
+
+15.	Quando a célula terminar a execução, os dados dos arquivos do bucket de entrada estarão disponíveis na variável vacinas, em um objeto parecido com o `DataFrame` do `pandas`. Qualquer tipo de análise, transformação e visualização nos dados poderá ser feita agora com `pyspark`
+
+16.	Execute algumas análises com comandos básicos do pandas e do pyspark. Cada umas das análises abaixo você deverá fazer um uma célula diferente, assim consegue ver os resultados parciais, sem precisar recarregar os dados
+
+    16.1. Quantidade de registros:
+
+vacinas.count()
+
+    16.2.Mostrar dados
+
+vacinas.show()
+
+    16.3. Mostrar schema dos dados
+
+vacinas.printSchema()
+
+    16.4. Contar quantidade de vacinas por nome
+
+count_nome_vacina = vacinas.groupBy("vacina_nome").count()
+
+count_nome_vacina.show()
+
+
+    16.5. Mostrar um gráfico de distribuição pode nome da vacina
+
+
 ## Finalização do Laboratório
 
 Termine o cluster do EMR para economizar recursos da sua conta.
