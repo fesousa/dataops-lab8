@@ -1,5 +1,2 @@
     # INICIAR SESSÃO SPARK
-    spark = SparkSession\
-        .builder\
-        .appName("SparkETL")\
-        .getOrCreate()
+    spark = SparkSession.builder.appName("SparkETL").getOrCreate()
