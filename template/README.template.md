@@ -156,20 +156,20 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Criaremos um novo item no Jenkins parecido com DataOpsImpactaDeployColeta
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Clique em <img src="images/Imagem15.png" height='25'/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Clique em <img src="images/Imagem16.png" height='25'/>
 
     8.4.	Na configuração do item, altere o seguinte:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Provider: DeployEntregaProvider
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.	Na seção <img src="images/Imagem16.png" height='25'/> altere os comandos que serão executados para o seguinte:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.	Na seção <img src="images/Imagem17.png" height='25'/> altere os comandos que serão executados para o seguinte:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/fesousa/dataops-lab8/blob/c446d10a237967a55ee0cc84bfa5fbae7d8bb882/code/deploy_jenkins.sh#L1-L13
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lembre-se de alterar `seu-bucket-de-deploy` pelo seu bucket de deploy criado no [Laboratório 7](https://github.com/fesousa/dataops-lab7) e `dataops-entrega-nomesobrenome` pelo nome do bucket criado no template deste laboratório
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Clique em <img src="images/Imagem17.png" height='25'/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Clique em <img src="images/Imagem18.png" height='25'/>
 
 
 9.	Crie um pipeline de entrega no CodePipeline com as seguintes características:
@@ -198,17 +198,17 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 12.	Abra a pilha `dataops-entrega-vacinas-stack`
 
-13.	Clique na aba <img src="images/Imagem18.png" height='25'/>
+13.	Clique na aba <img src="images/Imagem19.png" height='25'/>
 
 14.	Copie o valor da chave `APIGatewayURL`. Ela será uma URL parecida com a seguinte: `https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/`. 
 
 15.	Cole a URL na barra de endereço do navegador e verifique se obtém um resultado parecido com o seguinte. Essa é a URL onde está sendo executada a API de consulta aos dados do Redshift. Ao abri-la, a função lambda é executada, as consultas são realizadas no Redshift e os dados são retornados no formato JSON.
 
-<img src="images/Imagem19.png" height='400'/>
+<img src="images/Imagem20.png" height='400'/>
 
 16.	Volte ao VSCode no arquivo `index.html` criado no começo do lab e cole essa mesma URL no parâmetro url da chamada `ajax`. Depois, envie a alteração para o repositório do Github.
 
-<img src="images/Imagem19.png" height='200'/>
+<img src="images/Imagem21.png" height='200'/>
 
 17.	Espere o pipeline executar e verifique se tudo correu sem problemas
 
