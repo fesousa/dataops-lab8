@@ -64,6 +64,10 @@ Execução finalizada
 <img src="images/Imagem13.png" height='170'/>
 
 
+12.	Repare que uma nova célula foi criada automaticamente. Nela será escrito o próximo código que se deseja executar. O interessante do Jupyter notebook é que o que foi escrito e executado em uma célula (importações, variáveis, funções, classes, etc) pode ser utilizado em qualquer outra célula, evitando assim a reexecução de todo o código quando apenas uma pequena parte foi modificada.
+
+Além disso, como criamos um notebook do tipo pyspark, uma variável chamada `spark` foi criada, e poderá ser utilizada em qualquer outra célula. Ela contém a sessão do spark, e substitui a seguinte linha de código utilizada diretamente no spark do EMR:
+
 
 ## Finalização do Laboratório
 
