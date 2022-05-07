@@ -164,7 +164,7 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.	Na seção <img src="images/Imagem16.png" height='25'/> altere os comandos que serão executados para o seguinte:
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/fesousa/dataops-lab8/blob/c446d10a237967a55ee0cc84bfa5fbae7d8bb882/code/deploy_jenkins.sh#L1-L13
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lembre-se de alterar `seu-bucket-de-deploy` pelo seu bucket de deploy criado no [Laboratório 7](https://github.com/fesousa/dataops-lab7) e `dataops-entrega-nomesobrenome` pelo nome do bucket criado no template deste laboratório
@@ -209,6 +209,17 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 16.	Volte ao VSCode no arquivo `index.html` criado no começo do lab e cole essa mesma URL no parâmetro url da chamada `ajax`. Depois, envie a alteração para o repositório do Github.
 
 <img src="images/Imagem19.png" height='200'/>
+
+17.	Espere o pipeline executar e verifique se tudo correu sem problemas
+
+18.	Volte ao CloudFormation, na mesma pilha aberta anteriormente (`dataops-entrega-vacinas-stack`), na aba `Saídas`, copie o valor da chave `WebsiteURL`. Ela será uma URL parecida com a seguinte: `http://dataops-entrega-nomesobrenome.s3-website-us-east-1.amazonaws.com`. Cole essa URL no navegador e veja o resultado. Você deve ver 3 gráficos.
+
+
+<img src="images/Imagem22.png" height='200'/>
+
+<img src="images/Imagem23.png" height='200'/>
+
+<img src="images/Imagem24.png" height='600'/>
 
 
 ## Finalização do Laboratório
