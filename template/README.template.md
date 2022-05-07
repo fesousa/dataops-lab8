@@ -38,14 +38,18 @@ Quando criamos o cluster do EMR no [Laboratório 7](https://github.com/fesousa/d
 
 6. Conectado no Jupyter Notebook você verá a seguinte tela:
 
-<img src="images/Imagem7.png" height='200'/>
+<img src="images/Imagem7.png" height='180'/>
 
 
 7. Na tela inicial do Jupyter notebook crie um novo arquivo clicando em <img src="images/Imagem8.png" height='25'/> e depois em <img src="images/Imagem9.png" height='25'/>
 
-9. Uma nova janela com um notebook do Jupyter será aberta. Nele é possível criar códigos em python em pequenos blocos, executando separadamente assim evita o reprocessa-mento de etapas quando estamos testando as análises. Os códigos criados no notebook EMR são automaticamente salvos no S3. É possível configurar um repositório Git (tente fazer como desafio...)
+8. Uma nova janela com um notebook do Jupyter será aberta. Nele é possível criar códigos em python em pequenos blocos, executando separadamente assim evita o reprocessamento de etapas quando estamos testando as análises. Os códigos criados no notebook EMR são automaticamente salvos no S3. É possível configurar um repositório Git (tente fazer como desafio...)
 
+9. Identifique a célula onde são escritos os códigos python e pyspark. Ele parece com o da imagem abaixo. 
 
+<img src="images/Imagem7.png" height='180'/>
+
+10. Copie as importações do arquivo spark-etl-vacinas.py, do VSCode (código está logo abaixo) e cole na área cinza da célula do notebook. Depois, aperte o botão para executar.
 
 
 
