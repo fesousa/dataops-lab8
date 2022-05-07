@@ -215,11 +215,27 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 18.	Volte ao CloudFormation, na mesma pilha aberta anteriormente (`dataops-entrega-vacinas-stack`), na aba `Saídas`, copie o valor da chave `WebsiteURL`. Ela será uma URL parecida com a seguinte: `http://dataops-entrega-nomesobrenome.s3-website-us-east-1.amazonaws.com`. Cole essa URL no navegador e veja o resultado. Você deve ver 3 gráficos.
 
 
-<img src="images/Imagem22.png" height='200'/>
+<table>
 
-<img src="images/Imagem23.png" height='200'/>
+    <tr>
 
-<img src="images/Imagem24.png" height='600'/>
+        <td><img src="images/Imagem22.png" height='200'/></td>
+
+        <td><img src="images/Imagem23.png" height='200'/></td>
+    </tr>
+
+    <tr>
+
+        <td rowspan='2'><img src="images/Imagem24.png" height='600'/></td>
+
+    </tr>
+
+</table>
+
+
+
+
+
 
 
 ## Finalização do Laboratório
