@@ -218,10 +218,10 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 <table>
 <tr>
 <td><img src="images/Imagem22.png" height='200'/></td>
-<td><img src="images/Imagem23.png" height='200'/></td>
+<td rowspan='2'><img src="images/Imagem24.png" height='600'/></td>
 </tr>
 <tr>
-<td rowspan='2'><img src="images/Imagem24.png" height='600'/></td>
+<td><img src="images/Imagem23.png" height='200'/></td>
 </tr>
 </table>
 
