@@ -28,7 +28,7 @@ Quando criamos o cluster do EMR no [Laboratório 7](https://github.com/fesousa/d
 
     4.2. Cluster: clique em <img src="images/Imagem3.png" height='25'/> e escolha o cluster criado neste laboratório
 
-    <img src="images/Imagem4.png" height='200'/>
+    <img src="images/Imagem4.png" height='300'/>
 
     4.3. Função de serviço da AWS: escolha `LabRole`
 
