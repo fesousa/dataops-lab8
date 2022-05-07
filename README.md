@@ -53,15 +53,15 @@ Quando criamos o cluster do EMR no [Laboratório 7](https://github.com/fesousa/d
 
 https://github.com/fesousa/dataops-lab8/blob/96d55034e8639f95508051927acdaadd4543a760/code/imports.py#L1-L5
 
-11.	A execução termina quando o `*` dentro dos colchetes (`[]`) ao lado esquerdo da célula é trocado por um número, que identifica o número da execução na sessão do notebook. Quando finalizar, você deve ver um resultado como como o da segunda imagem abaixo (Execução terminada)
+11.	A execução termina quando o `*` dentro dos colchetes (`[]`) ao lado esquerdo da célula é trocado por um número, que identifica o número da execução na sessão do notebook. Quando finalizar, você deve ver um resultado como como o da segunda imagem abaixo (Execução finalizada)
 
 Célula em execução
 
-<img src="images/Imagem12.png" height='140'/>
+<img src="images/Imagem12.png" height='120'/>
 
-Execução terminada
+Execução finalizada
 
-<img src="images/Imagem13.png" height='140'/>
+<img src="images/Imagem13.png" height='170'/>
 
 
 
