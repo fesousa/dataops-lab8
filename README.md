@@ -102,6 +102,22 @@ https://github.com/fesousa/dataops-lab8/blob/d7e968e788fc60a8a5d2ce83a4373768c41
 
     16.5. Mostrar um gráfico de distribuição pode nome da vacina
 
+    https://github.com/fesousa/dataops-lab8/blob/1d8655755a0a32ff832d0c9157a2788f4985a163/code/chart_nome.py#L1-L13
+
+
+17.	Tente sozinho: crie células para completar o ETL executado dentro do EMR (consulte o [Laboratório 7](https://github.com/fesousa/dataops-lab7)), mas agora no notebook do EMR. As etapas que faltam são:
+
+    a.	Transformar a coluna de dose da vacina
+
+    b.	Remover colunas desnecessárias
+
+    c.	Renomear colunas
+
+    d.	Agrupar e contar registros
+    
+    e.	Salvar parquet no S3
+
+
 
 ## Finalização do Laboratório
 
