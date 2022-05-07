@@ -114,7 +114,7 @@ https://github.com/fesousa/dataops-lab8/blob/d7e968e788fc60a8a5d2ce83a4373768c41
     c.	Renomear colunas
 
     d.	Agrupar e contar registros
-    
+
     e.	Salvar parquet no S3
 
 
@@ -127,6 +127,5 @@ Termine o cluster do EMR para economizar recursos da sua conta.
 <div class="footer">
     &copy; 2022 Fernando Sousa
     <br/>
-    
-Last update: 2022-04-03 16:09:11
+    {{update}}
 </div>
