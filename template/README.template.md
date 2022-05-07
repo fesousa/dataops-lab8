@@ -118,6 +118,29 @@ https://github.com/fesousa/dataops-lab8/blob/d7e968e788fc60a8a5d2ce83a4373768c41
     e.	Salvar parquet no S3
 
 
+## Entrega com API Gateway, Lambda e Visualização com S3 e ECharts
+
+1.	Inicie o cluster Redshift criado no [Laboratório 5](https://github.com/fesousa/dataops-lab5)
+
+2.	Abra o VSCode e crie uma pasta para este laboratório (`lab8`)
+
+3.	Na pasta `lab8` crie um arquivo `template.yaml` com o conteúdo do código abaixo. Troque `nomesobrenome` no nome do bucket (`dataops-entrega-nomesobrenome`) pelo seu nome e sobrenome.
+
+https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb64316263/template.yaml#L1-L66
+
+4.	Ainda na pasta `lab8` no VSCode, crie um arquivo `index.html` com o conteúdo a seguir. Este arquivo contém a aplicação estática que será disponibilizada no S3 e consome a API criada com API gateway e Lambda. Ela cria gráficos com ECharts dos dados que estão no Redshift. Devemos trocar o parâmetro `url` do `ajax` para a url do API Gateway que será criada com o template do SAM anterior.
+
+https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb64316263/index.html#L1-L132
+
+5.	Ainda na pasta `lab8` no VSCode, crie uma pasta `app`
+
+6.	Dentro da pasta `lab8/app` crie o arquivo `charts.py` com o conteúdo a seguir. Este script será a função lambda que lê os dados do Redshift e retorna um JSON com os resultados. Ela será a execução do endpoint do API Gateway. Troque `<ID-CLUSTER-REDSHIFT>` pelo id do seu cluster Redshift criado no [Laboratório 5](https://github.com/fesousa/dataops-lab5).
+
+
+https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb64316263/app/charts.py#L1-L61
+
+
+
 
 ## Finalização do Laboratório
 
