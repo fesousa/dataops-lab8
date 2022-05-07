@@ -47,9 +47,14 @@ Quando criamos o cluster do EMR no [Laboratório 7](https://github.com/fesousa/d
 
 9. Identifique a célula onde são escritos os códigos python e pyspark. Ele parece com o da imagem abaixo. 
 
-<img src="images/Imagem7.png" height='180'/>
+<img src="images/Imagem7.png" height='140'/>
 
 10. Copie as importações do arquivo spark-etl-vacinas.py, do VSCode (código está logo abaixo) e cole na área cinza da célula do notebook. Depois, aperte o botão para executar.
+
+https://github.com/fesousa/dataops-lab8/blob/96d55034e8639f95508051927acdaadd4543a760/code/imports.py
+
+
+
 
 
 
