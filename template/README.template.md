@@ -204,11 +204,11 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 15.	Cole a URL na barra de endereço do navegador e verifique se obtém um resultado parecido com o seguinte. Essa é a URL onde está sendo executada a API de consulta aos dados do Redshift. Ao abri-la, a função lambda é executada, as consultas são realizadas no Redshift e os dados são retornados no formato JSON.
 
-<img src="images/Imagem20.png" height='400'/>
+<img src="images/Imagem20.png" height='250'/>
 
 16.	Volte ao VSCode no arquivo `index.html` criado no começo do lab e cole essa mesma URL no parâmetro url da chamada `ajax`. Depois, envie a alteração para o repositório do Github.
 
-<img src="images/Imagem21.png" height='200'/>
+<img src="images/Imagem21.png" height='400'/>
 
 17.	Espere o pipeline executar e verifique se tudo correu sem problemas
 
