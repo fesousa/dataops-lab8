@@ -76,6 +76,7 @@ https://github.com/fesousa/dataops-lab8/blob/ffa0b7f3e180bc313a2a71c10fd88240277
 
 14.	Na terceira célula faça a leitura dos dados do bucket de entrada (`input_path`) para uma variável `vacinas`. Essa nova variável poderá ser utilizada nas próximas células para continuar o ETL. Execute a célula para a leitura dos dados.
 
+https://github.com/fesousa/dataops-lab8/blob/d7e968e788fc60a8a5d2ce83a4373768c4184c5c/code/read_data.py#L1-L2
 
 ## Finalização do Laboratório
 
