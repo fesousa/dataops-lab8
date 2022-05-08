@@ -68,7 +68,7 @@ Execução finalizada
 
 Além disso, como criamos um notebook do tipo pyspark, uma variável chamada `spark` foi criada, e poderá ser utilizada em qualquer outra célula. Ela contém a sessão do spark, e substitui a seguinte linha de código utilizada diretamente no spark do EMR:
 
-https://github.com/fesousa/dataops-lab8/blob/3de56ffa93ad23a4fafb0e0b2af8072f3f5d5992/code/sessao_spark.py#L1-L2
+https://github.com/fesousa/dataops-lab8/blob/03666385aff3a8d59f52db944f7ad995a7444148/code/sessao_spark.py#L1-L2
 
 13.	Na segunda célula (a que ainda está vazia, sem nenhum código), crie duas variáveis para armazenar os caminhos dos buckets de entrada e saída do ETL. Lembre-se de trocar `<nome-bucket>` pelo que bucket onde estão seus dados. Depois execute a nova célula. As duas variáveis criadas (`input_path` e `output_path`) agora podem ser utilizadas em qualquer outra célula do notebook. Uma nova célula será aberta.
 
@@ -240,5 +240,5 @@ Termine o cluster do EMR para economizar recursos da sua conta.
     &copy; 2022 Fernando Sousa
     <br/>
     
-Last update: 2022-05-07 19:54:50
+Last update: 2022-05-08 23:14:56
 </div>
