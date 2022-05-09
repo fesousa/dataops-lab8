@@ -7,7 +7,7 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       AccessControl: PublicRead # Habilitar leitura pública do bucket
-      BucketName: dataops-entrega-fernandosousa # nome do bucket
+      BucketName: dataops-entrega-nomesobrenome # nome do bucket
       WebsiteConfiguration:
         IndexDocument: index.html # arquivo index da aplicação
   # Política de acesso ao Bucket, para poder acessar de qualquer lugar
