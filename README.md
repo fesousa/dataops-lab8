@@ -44,15 +44,15 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
     8.3. Na página de criação de um novo item, coloque as seguintes configurações:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Enter an item name: DataOpsImpactaDeployEntrega
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Enter an item name: DataOpsDeployEntrega
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Copy from : DataOpsImpactaDeployColeta (criado no [Laboratório 4](https://github.com/fesousa/dataops-lab4))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Copy from : DataOpsDeployColeta (criado no [Laboratório 4](https://github.com/fesousa/dataops-lab4))
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Criaremos um novo item no Jenkins parecido com DataOpsImpactaDeployColeta
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Criaremos um novo item no Jenkins parecido com DataOpsDeployColeta
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Clique em <img src="images/Imagem16.png" height='25'/>
 
-    8.4.	Na configuração do item, altere o seguinte:
+&nbsp;&nbsp;&nbsp;&nbsp;8.4. Na configuração do item, altere o seguinte:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Provider: DeployEntregaProvider
 
@@ -82,9 +82,9 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. URL do servidor: IP e porta onde está seu Jenkins
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Nome do Projeto: DataOpsImpactaDeployEntrega
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Nome do Projeto: DataOpsDeployEntrega
 
-    9.5. Sem etapa de implantação
+&nbsp;&nbsp;&nbsp;&nbsp;9.5. Sem etapa de implantação
 
 10.	Verifique se o pipeline executou sem problemas
 
@@ -96,13 +96,15 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 14.	Copie o valor da chave `APIGatewayURL`. Ela será uma URL parecida com a seguinte: `https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/`. 
 
+<img src="images/Imagem20.png" width='100%'/>
+
 15.	Cole a URL na barra de endereço do navegador e verifique se obtém um resultado parecido com o seguinte. Essa é a URL onde está sendo executada a API de consulta aos dados do Redshift. Ao abri-la, a função lambda é executada, as consultas são realizadas no Redshift e os dados são retornados no formato JSON.
 
-<img src="images/Imagem20.png" width='100%'/>
+<img src="images/Imagem21.png" height='500'/>
 
 16.	Volte ao VSCode no arquivo `index.html` criado no começo do lab e cole essa mesma URL no parâmetro url da chamada `ajax`. Depois, envie a alteração para o repositório do Github.
 
-<img src="images/Imagem21.png" height='500'/>
+<img src="images/Imagem25.png" height='500'/>
 
 17.	Espere o pipeline executar e verifique se tudo correu sem problemas
 
@@ -134,5 +136,5 @@ Termine o cluster do EMR para economizar recursos da sua conta.
     &copy; 2022 Fernando Sousa
     <br/>
     
-Last update: 2022-05-09 17:30:48
+Last update: 2022-05-09 18:12:03
 </div>
