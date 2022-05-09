@@ -104,7 +104,7 @@ https://github.com/fesousa/dataops-lab8/blob/99ec56348890d15dccea5b884eb790bb643
 
 16.	Volte ao VSCode no arquivo `index.html` criado no começo do lab e cole essa mesma URL no parâmetro url da chamada `ajax`. Depois, envie a alteração para o repositório do Github.
 
-<img src="images/Imagem25.png" height='500'/>
+<img src="images/Imagem25.png" height='200'/>
 
 17.	Espere o pipeline executar e verifique se tudo correu sem problemas
 
@@ -136,5 +136,5 @@ Termine o cluster do EMR para economizar recursos da sua conta.
     &copy; 2022 Fernando Sousa
     <br/>
     
-Last update: 2022-05-09 18:24:53
+Last update: 2022-05-09 18:37:44
 </div>
