@@ -1,6 +1,6 @@
 # instalar bibliotecas
 sc.install_pypi_package("pandas==0.25.1") 
-sc.install_pypi_package("matplotlib")
+sc.install_pypi_package("matplotlib==3.5.1") 
 
 count_nome_vacina_pd = count_nome_vacina.toPandas() # transformar em Pandas
 

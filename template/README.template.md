@@ -64,11 +64,13 @@ Execução finalizada
 <img src="images/Imagem13.png" height='170'/>
 
 
-12.	Repare que uma nova célula foi criada automaticamente. Nela será escrito o próximo código que se deseja executar. O interessante do Jupyter notebook é que o que foi escrito e executado em uma célula (importações, variáveis, funções, classes, etc) pode ser utilizado em qualquer outra célula, evitando assim a reexecução de todo o código quando apenas uma pequena parte foi modificada.
+Repare que uma nova célula foi criada automaticamente. Nela será escrito o próximo código que se deseja executar. O interessante do Jupyter notebook é que o que foi escrito e executado em uma célula (importações, variáveis, funções, classes, etc) pode ser utilizado em qualquer outra célula, evitando assim a reexecução de todo o código quando apenas uma pequena parte foi modificada.
 
 Além disso, como criamos um notebook do tipo pyspark, uma variável chamada `spark` foi criada, e poderá ser utilizada em qualquer outra célula. Ela contém a sessão do spark, e substitui a seguinte linha de código utilizada diretamente no spark do EMR:
 
 https://github.com/fesousa/dataops-lab8/blob/03666385aff3a8d59f52db944f7ad995a7444148/code/sessao_spark.py#L1-L2
+
+12. Na segunda célula (a que ainda está vazia, sem nenhum código), execute o seguinte código para terminar de configurar o pyspark
 
 13.	Na segunda célula (a que ainda está vazia, sem nenhum código), crie duas variáveis para armazenar os caminhos dos buckets de entrada e saída do ETL. Lembre-se de trocar `<nome-bucket>` pelo que bucket onde estão seus dados. Depois execute a nova célula. As duas variáveis criadas (`input_path` e `output_path`) agora podem ser utilizadas em qualquer outra célula do notebook. Uma nova célula será aberta.
 
