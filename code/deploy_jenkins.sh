@@ -4,7 +4,7 @@ PYENV_HOME=$WORKSPACE
 python3 -m venv $PYENV_HOME
 . $PYENV_HOME/bin/activate
 # instalar aws sam cli
-pip install aws-sam-cli
+pip install aws-sam-cli==1.41.0
 # construir e fazer deploy da aplicação
 sam build
 sam package --region us-east-1 --s3-bucket seu-bucket-de-deploy
