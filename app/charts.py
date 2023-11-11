@@ -7,7 +7,7 @@ client = boto3.client("redshift-data")
 
 def handler(event, context):
     # Nome do cluster redshift
-    redshift_cluster_id = '<ID-CLUSTER-REDSHIFT>'
+    redshift_cluster_id = 'impacta-dataops-cluster'
     # nome do database redshift
     redshift_database = 'dev'
     # nome do usuário do database redshift
