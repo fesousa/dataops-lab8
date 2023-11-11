@@ -6,7 +6,11 @@ Resources:
   S3BucketEntrega:
     Type: 'AWS::S3::Bucket'
     Properties:
-      AccessControl: PublicRead # Habilitar leitura pública do bucket
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
       BucketName: dataops-entrega-nomesobrenome # nome do bucket
       WebsiteConfiguration:
         IndexDocument: index.html # arquivo index da aplicação
